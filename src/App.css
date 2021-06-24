@@ -1,5 +1,17 @@
+* {
+  font-family: "Atari", sans-serif;
+}
+
 .App {
   text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
 }
 
 .App-logo {
@@ -35,4 +47,132 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#mapTable {
+  border: 2px solid black;
+}
+#mapTable td{
+  border: 2px solid black;
+}
+
+.generalSquare { 
+  width: 6vw;
+  height: 6vw;
+}
+.generalRoombaSquare {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 0.2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.mapSquare {
+  transition: 0.5s;
+  transition-timing-function: linear;
+}
+
+.dirtSquare {
+  background-image: url('./Assets/images/DirtyTile.jpg');
+
+  background-position: center;
+}
+
+.roombaSquare {
+  background-image: url('./Assets/images/roomba.png');
+
+  background-position: center;
+  background-size: cover;
+  z-index: 2000;
+}
+.coverSquare {
+  background-image: url('./Assets/images/cover.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.treasureMapSquare {
+  width: 2rem;
+}
+
+#mapAndStatsBoxDiv {
+  display:flex;
+  flex-direction: column;
+}
+
+#statsBoxDiv {
+  font-size: 1.2rem;
+  padding: 1vw;
+}
+
+#dirtLocationsUL {
+  list-style: none;
+  padding: 0;
+}
+
+#statsTable {
+  width: 90%;
+  padding: 3vw;
+  margin: auto;
+  font-size: 14px;
+}
+
+#statsTable th {
+  padding: unset !important;
+}
+
+.statsTableRow {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+@media only screen and (min-width: 375px) {
+  #statsTable {
+    width: unset;
+    font-size: unset;
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  #statsTable th {
+    padding: 1vw !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #statsTable {
+    width: 80%;
+  }
+
+  .generalSquare {
+    width: 3vw;
+    height: 3vw;
+  }
+
+  #mapAndStatsBoxDiv {
+    flex-direction: unset;
+    width: fit-content;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  #mapAndStatsBoxDiv {
+    justify-content: space-evenly;
+    float:left
+  }
+
+
 }
